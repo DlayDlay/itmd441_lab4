@@ -1,15 +1,36 @@
 window.onload=function(){
-document.getElementById('btn').addEventListener('click', function(){
+	document.getElementById('btn').addEventListener('click', function(){
             console.log('Button Clicked!');
+	// Coordinates for New York
+latitude = 40.71427;
+longitude = -74.00597;
 
-            fetch('https://api.sunrisesunset.io/json?lat=38.907192&lng=-77.036873')
-            .then(function(response){
-                return response.json();
-            })
-            .then(function(myJson){
-                console.log(myJson);
-            })
-            .catch(error => console.log(error));
+url = `https://api.sunrisesunset.io/json?lat=${latitude}&lng=${longitude}`;
+url2 = `https://api.sunrisesunset.io/json?lat=${latitude}&lng=${longitude}&date=tomorrow`;
 
-        }, false); //end button click event handler
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data.results.sunrise);
+    console.log(data.results.sunset);
+    console.log(data.results.dawn);
+	console.log(data.results.dusk);
+	console.log(data.results.day_length);
+	console.log(data.results.timezone);
+  })
+  .catch((error) => console.error("Error:", error));
+	
+	fetch(url2)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data.results.sunrise);
+    console.log(data.results.sunset);
+    console.log(data.results.dawn);
+	console.log(data.results.dusk);
+	console.log(data.results.day_length);
+	console.log(data.results.timezone);
+  })
+  .catch((error) => console.error("Error:", error));
+	})
+
 }
