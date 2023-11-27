@@ -8,7 +8,28 @@
   <script src="js/sunset.js"></script>
 </head>
 <body>
-<button id="btn">Click</button>
+<form>
+  <fieldset>
+    <legend>Please select a location:</legend>
+    <div>
+      <input type="radio" id="NY" name="city" value="NY" checked />
+      <label for="NY">New York</label>
+
+      <input type="radio" id="CHI" name="city" value="CHI" />
+      <label for="CHI">Chicago</label>
+
+      <input type="radio" id="LA" name="city" value="LA" />
+      <label for="LA">Los Angeles</label>
+	  
+	  <input type="radio" id="LV" name="city" value="LV" />
+      <label for="LV">Las Vegas</label>
+	  
+	  <input type="radio" id="DC" name="city" value="DC" />
+      <label for="DC">Washington D.C.</label>
+    </div>
+  </fieldset>
+</form>
+<button id="btn">Submit</button>
 <div id="results"></div>
 </body>
 </html>
