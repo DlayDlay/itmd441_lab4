@@ -13,10 +13,15 @@ const longLV = -115.139832;
 const latDC = 38.907192;
 const longDC = -77.036873;
 
+lat = 0;
+lon = 0;
+
+
 window.onload=function(){
 	
 	made = false;
-	
+	getPos();
+     	 
 	document.getElementById('btn').addEventListener('click', function(){
             console.log('Button Clicked!');
 			
@@ -25,10 +30,26 @@ window.onload=function(){
 			made = true;
 			}
 			
-			
-if(document.getElementById('NY').checked){
+    
+if(document.getElementById('current').checked){
+	url = `https://api.sunrisesunset.io/json?lat=${lat}&lng=${lon}`;
+	url2 = `https://api.sunrisesunset.io/json?lat=${lat}&lng=${lon}&date=tomorrow`;
+}
+else if(document.getElementById('NY').checked){
 	url = `https://api.sunrisesunset.io/json?lat=${latNY}&lng=${longNY}`;
 	url2 = `https://api.sunrisesunset.io/json?lat=${latNY}&lng=${longNY}&date=tomorrow`;
+}
+else if(document.getElementById('LV').checked){
+	url = `https://api.sunrisesunset.io/json?lat=${latLV}&lng=${longLV}`;
+	url2 = `https://api.sunrisesunset.io/json?lat=${latLV}&lng=${longLV}&date=tomorrow`;
+}
+else if(document.getElementById('CHI').checked){
+	url = `https://api.sunrisesunset.io/json?lat=${latCHI}&lng=${longCHI}`;
+	url2 = `https://api.sunrisesunset.io/json?lat=${latCHI}&lng=${longCHI}&date=tomorrow`;
+}
+else if(document.getElementById('DC').checked){
+	url = `https://api.sunrisesunset.io/json?lat=${latDC}&lng=${longDC}`;
+	url2 = `https://api.sunrisesunset.io/json?lat=${latDC}&lng=${longDC}&date=tomorrow`;
 }
 else if(document.getElementById('LA').checked){
 	url = `https://api.sunrisesunset.io/json?lat=${latLA}&lng=${longLA}`;
@@ -142,3 +163,19 @@ function createBoxes() {
 
 }	
 
+function getPos(){
+	navigator.geolocation.getCurrentPosition(success, error);
+}
+
+function success(pos) {
+	let crd = pos.coords;
+	lat = crd.latitude;
+	lon = crd.longitude;
+	console.log('Your current position is:');
+	url = `https://api.sunrisesunset.io/json?lat=${lat}&lng=${lon}`;
+	url2 = `https://api.sunrisesunset.io/json?lat=${lat}&lng=${lon}&date=tomorrow`;
+}
+
+function error(err) {
+	console.warn(`ERROR(${err.code}): ${err.message}`);
+}
