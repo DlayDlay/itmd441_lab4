@@ -115,50 +115,62 @@ function createBoxes() {
 
 	risetxt.type = "text";
 	risetxt.disabled = true;
+	risetxt.setAttribute("id", "rise");
 	document.body.appendChild(risetxt);
 	
 	settxt.type = "text";
 	settxt.disabled = true;
+	settxt.setAttribute("id", "set");
 	document.body.appendChild(settxt);
 	
 	dawntxt.type = "text";
 	dawntxt.disabled = true;
+	dawntxt.setAttribute("id", "dawn");
 	document.body.appendChild(dawntxt);
 	
 	dusktxt.type = "text";
 	dusktxt.disabled = true;
+	dusktxt.setAttribute("id", "dusk");
 	document.body.appendChild(dusktxt);
 	
 	lengthtxt.type = "text";
 	lengthtxt.disabled = true;
+	lengthtxt.setAttribute("id", "length");
 	document.body.appendChild(lengthtxt);
 	
 	zonetxt.type = "text";
 	zonetxt.disabled = true;
+	zonetxt.setAttribute("id", "zone");
 	document.body.appendChild(zonetxt);
 	
 	risetxt2.type = "text";
 	risetxt2.disabled = true;
+	risetxt2.setAttribute("id", "rise2");
 	document.body.appendChild(risetxt2);
 	
 	settxt2.type = "text";
 	settxt2.disabled = true;
+	settxt2.setAttribute("id", "set2");
 	document.body.appendChild(settxt2);
 	
 	dawntxt2.type = "text";
 	dawntxt2.disabled = true;
+	dawntxt2.setAttribute("id", "dawn2");
 	document.body.appendChild(dawntxt2);
 	
 	dusktxt2.type = "text";
 	dusktxt2.disabled = true;
+	dusktxt2.setAttribute("id", "dusk2");
 	document.body.appendChild(dusktxt2);
 	
 	lengthtxt2.type = "text";
 	lengthtxt2.disabled = true;
+	lengthtxt2.setAttribute("id", "length2");
 	document.body.appendChild(lengthtxt2);
 	
 	zonetxt2.type = "text";
 	zonetxt2.disabled = true;
+	zonetxt2.setAttribute("id", "zone2");
 	document.body.appendChild(zonetxt2);
 
 }	
