@@ -14,8 +14,16 @@ const latDC = 38.907192;
 const longDC = -77.036873;
 
 window.onload=function(){
+	
+	made = false;
+	
 	document.getElementById('btn').addEventListener('click', function(){
             console.log('Button Clicked!');
+			
+		if (made == false) {
+			createBoxes();
+			made = true;
+			}
 			
 			
 if(document.getElementById('NY').checked){
@@ -39,29 +47,98 @@ else if(document.getElementById('DC').checked){
 	url2 = `https://api.sunrisesunset.io/json?lat=${latDC}&lng=${longDC}&date=tomorrow`;
 }
 
+
 fetch(url)
   .then((response) => response.json())
-  .then((data) => {
-    console.log(data.results.sunrise);
-    console.log(data.results.sunset);
-    console.log(data.results.dawn);
-	console.log(data.results.dusk);
-	console.log(data.results.day_length);
-	console.log(data.results.timezone);
+  .then((data) => {  
+    risetxt.value = (data.results.sunrise);
+    settxt.value = (data.results.sunset);
+    dawntxt.value = (data.results.dawn);
+	dusktxt.value = (data.results.dusk);
+	lengthtxt.value = (data.results.day_length);
+	zonetxt.value = (data.results.timezone);
   })
   .catch((error) => console.error("Error:", error));
 	
 	fetch(url2)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data.results.sunrise);
-    console.log(data.results.sunset);
-    console.log(data.results.dawn);
-	console.log(data.results.dusk);
-	console.log(data.results.day_length);
-	console.log(data.results.timezone);
+    risetxt2.value = (data.results.sunrise);
+    settxt2.value = (data.results.sunset);
+    dawntxt2.value = (data.results.dawn);
+	dusktxt2.value = (data.results.dusk);
+	lengthtxt2.value = (data.results.day_length);
+	zonetxt2.value = (data.results.timezone);
   })
   .catch((error) => console.error("Error:", error));
 	})
 
 }
+
+
+function createBoxes() {
+	
+	risetxt = document.createElement("input");
+	settxt = document.createElement("input");
+	dawntxt = document.createElement("input");
+	dusktxt = document.createElement("input");
+	lengthtxt = document.createElement("input");
+	zonetxt = document.createElement("input");
+	
+	risetxt2 = document.createElement("input");
+	settxt2 = document.createElement("input");
+	dawntxt2 = document.createElement("input");
+	dusktxt2 = document.createElement("input");
+	lengthtxt2 = document.createElement("input");
+	zonetxt2 = document.createElement("input");
+
+	risetxt.type = "text";
+	risetxt.disabled = true;
+	document.body.appendChild(risetxt);
+	
+	settxt.type = "text";
+	settxt.disabled = true;
+	document.body.appendChild(settxt);
+	
+	dawntxt.type = "text";
+	dawntxt.disabled = true;
+	document.body.appendChild(dawntxt);
+	
+	dusktxt.type = "text";
+	dusktxt.disabled = true;
+	document.body.appendChild(dusktxt);
+	
+	lengthtxt.type = "text";
+	lengthtxt.disabled = true;
+	document.body.appendChild(lengthtxt);
+	
+	zonetxt.type = "text";
+	zonetxt.disabled = true;
+	document.body.appendChild(zonetxt);
+	
+	risetxt2.type = "text";
+	risetxt2.disabled = true;
+	document.body.appendChild(risetxt2);
+	
+	settxt2.type = "text";
+	settxt2.disabled = true;
+	document.body.appendChild(settxt2);
+	
+	dawntxt2.type = "text";
+	dawntxt2.disabled = true;
+	document.body.appendChild(dawntxt2);
+	
+	dusktxt2.type = "text";
+	dusktxt2.disabled = true;
+	document.body.appendChild(dusktxt2);
+	
+	lengthtxt2.type = "text";
+	lengthtxt2.disabled = true;
+	document.body.appendChild(lengthtxt2);
+	
+	zonetxt2.type = "text";
+	zonetxt2.disabled = true;
+	document.body.appendChild(zonetxt2);
+
+}	
+
