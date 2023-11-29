@@ -77,6 +77,7 @@ fetch(url)
     dawntxt.value = (data.results.dawn);
 	dusktxt.value = (data.results.dusk);
 	lengthtxt.value = (data.results.day_length);
+	noontxt.value = (data.results.solar_noon);
 	zonetxt.value = (data.results.timezone);
   })
   .catch((error) => console.error("Error:", error));
@@ -89,6 +90,7 @@ fetch(url)
     dawntxt2.value = (data.results.dawn);
 	dusktxt2.value = (data.results.dusk);
 	lengthtxt2.value = (data.results.day_length);
+	noontxt2.value = (data.results.solar_noon);
 	zonetxt2.value = (data.results.timezone);
   })
   .catch((error) => console.error("Error:", error));
@@ -99,11 +101,13 @@ fetch(url)
 
 function createBoxes() {
 	
+	//Create Elements
 	risetxt = document.createElement("input");
 	settxt = document.createElement("input");
 	dawntxt = document.createElement("input");
 	dusktxt = document.createElement("input");
 	lengthtxt = document.createElement("input");
+	noontxt = document.createElement("input");
 	zonetxt = document.createElement("input");
 	
 	risetxt2 = document.createElement("input");
@@ -111,68 +115,131 @@ function createBoxes() {
 	dawntxt2 = document.createElement("input");
 	dusktxt2 = document.createElement("input");
 	lengthtxt2 = document.createElement("input");
+	noontxt2 = document.createElement("input");
 	zonetxt2 = document.createElement("input");
+	
+	riselbl = document.createElement("h2");
+	setlbl = document.createElement("h2");
+	dawnlbl = document.createElement("h2");
+	dusklbl = document.createElement("h2");
+	lengthlbl = document.createElement("h2");
+	noonlbl = document.createElement("h2");
+	zonelbl = document.createElement("h2");
+	
+	//create div
+	
+	infodiv = document.createElement("div");
+	infodiv.setAttribute("id", "info");
+	
+	//fill div
+	//Sunrise
+	
+	infodiv.appendChild(riselbl);
+	riselbl.innerHTML = "Sunrise";
 
 	risetxt.type = "text";
 	risetxt.disabled = true;
 	risetxt.setAttribute("id", "rise");
-	document.body.appendChild(risetxt);
-	
-	settxt.type = "text";
-	settxt.disabled = true;
-	settxt.setAttribute("id", "set");
-	document.body.appendChild(settxt);
-	
-	dawntxt.type = "text";
-	dawntxt.disabled = true;
-	dawntxt.setAttribute("id", "dawn");
-	document.body.appendChild(dawntxt);
-	
-	dusktxt.type = "text";
-	dusktxt.disabled = true;
-	dusktxt.setAttribute("id", "dusk");
-	document.body.appendChild(dusktxt);
-	
-	lengthtxt.type = "text";
-	lengthtxt.disabled = true;
-	lengthtxt.setAttribute("id", "length");
-	document.body.appendChild(lengthtxt);
-	
-	zonetxt.type = "text";
-	zonetxt.disabled = true;
-	zonetxt.setAttribute("id", "zone");
-	document.body.appendChild(zonetxt);
+	infodiv.appendChild(risetxt);
 	
 	risetxt2.type = "text";
 	risetxt2.disabled = true;
 	risetxt2.setAttribute("id", "rise2");
-	document.body.appendChild(risetxt2);
+	infodiv.appendChild(risetxt2);
+	
+	//Sunset
+	
+	infodiv.appendChild(setlbl);
+	setlbl.innerHTML = "Sunset";
+	
+	settxt.type = "text";
+	settxt.disabled = true;
+	settxt.setAttribute("id", "set");
+	infodiv.appendChild(settxt);
 	
 	settxt2.type = "text";
 	settxt2.disabled = true;
 	settxt2.setAttribute("id", "set2");
-	document.body.appendChild(settxt2);
+	infodiv.appendChild(settxt2);
+	
+	//Dawn
+	
+	infodiv.appendChild(dawnlbl);
+	dawnlbl.innerHTML = "Dawn";
+	
+	dawntxt.type = "text";
+	dawntxt.disabled = true;
+	dawntxt.setAttribute("id", "dawn");
+	infodiv.appendChild(dawntxt);
 	
 	dawntxt2.type = "text";
 	dawntxt2.disabled = true;
 	dawntxt2.setAttribute("id", "dawn2");
-	document.body.appendChild(dawntxt2);
+	infodiv.appendChild(dawntxt2);
+	
+	//Dusk
+	
+	infodiv.appendChild(dusklbl);
+	dusklbl.innerHTML = "Dusk";
+	
+	dusktxt.type = "text";
+	dusktxt.disabled = true;
+	dusktxt.setAttribute("id", "dusk");
+	infodiv.appendChild(dusktxt);
 	
 	dusktxt2.type = "text";
 	dusktxt2.disabled = true;
 	dusktxt2.setAttribute("id", "dusk2");
-	document.body.appendChild(dusktxt2);
+	infodiv.appendChild(dusktxt2);
+	
+	//Length
+	
+	infodiv.appendChild(lengthlbl);
+	lengthlbl.innerHTML = "Length";
+	
+	lengthtxt.type = "text";
+	lengthtxt.disabled = true;
+	lengthtxt.setAttribute("id", "length");
+	infodiv.appendChild(lengthtxt);
 	
 	lengthtxt2.type = "text";
 	lengthtxt2.disabled = true;
 	lengthtxt2.setAttribute("id", "length2");
-	document.body.appendChild(lengthtxt2);
+	infodiv.appendChild(lengthtxt2);
+	
+	//Noon
+	
+	infodiv.appendChild(noonlbl);
+	noonlbl.innerHTML = "Solar Noon";
+	
+	noontxt.type = "text";
+	noontxt.disabled = true;
+	noontxt.setAttribute("id", "noon");
+	infodiv.appendChild(noontxt);
+	
+	noontxt2.type = "text";
+	noontxt2.disabled = true;
+	noontxt2.setAttribute("id", "noon2");
+	infodiv.appendChild(noontxt2);
+	
+	//Zone
+	
+	infodiv.appendChild(zonelbl);
+	zonelbl.innerHTML = "Timezone";
+	
+	zonetxt.type = "text";
+	zonetxt.disabled = true;
+	zonetxt.setAttribute("id", "zone");
+	infodiv.appendChild(zonetxt);
+	
 	
 	zonetxt2.type = "text";
 	zonetxt2.disabled = true;
 	zonetxt2.setAttribute("id", "zone2");
-	document.body.appendChild(zonetxt2);
-
+	infodiv.appendChild(zonetxt2);
+	
+	//add div
+	document.body.appendChild(infodiv);
 }	
 
 function getPos(){
