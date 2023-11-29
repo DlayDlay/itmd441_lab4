@@ -22,6 +22,7 @@ window.onload=function(){
 	made = false;
 	getPos();
      	 
+		 
 	document.getElementById('btn').addEventListener('click', function(){
             console.log('Button Clicked!');
 			
@@ -125,6 +126,15 @@ function createBoxes() {
 	lengthlbl = document.createElement("h2");
 	noonlbl = document.createElement("h2");
 	zonelbl = document.createElement("h2");
+	
+	img = document.createElement("img");
+	img.src = "images/sunrise.jpg";
+	document.body.appendChild(img);
+	
+	daylbl = document.createElement("h2");
+	daylbl.innerHTML = "Day 1 vs Day 2";
+	document.body.appendChild(daylbl);
+	
 	
 	//create div
 	

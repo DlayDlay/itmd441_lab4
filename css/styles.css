@@ -6,6 +6,36 @@ form {
 		margin:  0 25%;
 }
 
+button {
+	margin: 3% 45%;
+	padding: 1% 4%;
+	border-radius: 20%;
+	background-color: goldenrod;
+	color: white;
+	
+}
+
+button:hover {
+		background-color: yellow;
+		color: black;	
+}
+
+img {
+	width: 20%;
+	margin: 0 40%;
+	border-radius: 20%;
+	max-height: 5%;
+	
+}
+
+h2 {
+	font-family: fantasy;
+	width: 100%;
+	margin: 0 47%;
+	color: indigo;
+	
+}
+
 fieldset {
 	border-radius: 33%;
 	border-color: yellow;
@@ -35,4 +65,29 @@ input {
 label {
 	margin: 1% 0 3% 0;
 	color: indigo;
+}
+
+#info {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 50%;
+	justify-content: space-evenly;
+	margin: auto;
+}
+
+#info input {
+	width: 25%;
+	text-align: center;
+	margin: 5% 0;
+	background-color: yellow;
+	padding: 2%;
+	border-radius: 15%;	
+	font-size: 1.1em;
+}
+
+#info h2 {
+	font-family: fantasy;
+	color: indigo;
+	margin : auto;
 }
