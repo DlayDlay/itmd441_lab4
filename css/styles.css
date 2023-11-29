@@ -1,6 +1,38 @@
+body {
+	background-color: cornflowerblue;
+}
+
+form {
+		margin:  0 25%;
+}
+
+fieldset {
+	border-radius: 33%;
+	border-color: yellow;
+	border-width: thick ;
+}
+
+legend {
+	font-size: 1.25em;
+	color: white;
+}
+
 form div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  font-size: 1.25em;
+  background: silver;
+  border-radius: 33%;
+  font-family: fantasy;
+  padding: 2.5% 5%;
+}
+
+input {
+	accent-color: green;
+}
+
+label {
+	margin: 1% 0 2.5% 0;
+	color: indigo;
 }
